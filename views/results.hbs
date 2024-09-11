@@ -1,0 +1,138 @@
+<main>
+  <div>
+    <table id="resultList">
+      <caption>Results List</caption>
+      <tr>
+        <th>Result ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Specimen ID</th>
+        <th>Laboratory Test Name</th>
+        <th>Facility Name</th>
+        <th>Reported Datetime</th>
+        <th>Value</th>
+        <th>Is Spoiled?</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      {{#each data}}
+        <tr result-id={{this.resultID}}>
+          <td>{{this.resultID}}</td>
+          <td>{{this.firstName}}</td>
+          <td>{{this.lastName}}</td>
+          <td>{{this.specimenID}}</td>
+          <td>{{this.testName}}</td>
+          <td>{{this.facilityName}}</td>
+          <td>{{this.reportedDate}}</td>
+          <td>{{this.value}}</td>
+          <td>{{this.isSpoiled}}</td>
+          <td><button onclick="editResult({{this.resultID}})">Edit</button></td>
+          <td><button
+              onclick="deleteResult({{this.resultID}})"
+            >Delete</button></td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+
+  <div class="forms">
+    <form id="addResultForm" action="/add-result">
+      <legend>New Result</legend>
+      <fieldset>
+        <label for="patientSpecimenID">Patient Specimen</label>
+        <select id="patientSpecimenID">
+          {{#each patientSpecimenNewDropDown}}
+            <option value={{this.value}}>{{this.displayValue}}</option>
+          {{/each}}
+        </select>
+        <label>Laboratory Test Name</label>
+        <select name="laboratoryTestID" id="laboratoryTestID">
+          {{#each laboratoryTestName}}
+            <option value={{this.laboratoryTestID}}>{{this.name}}</option>
+          {{/each}}
+        </select>
+        <label>Facility Name</label>
+        <select name="facilityID" id="facilityID">
+          {{#each facilityName}}
+            <option value={{this.facilityID}}>{{this.facilityName}}</option>
+          {{/each}}
+        </select>
+        <label>Reporting Datetime:</label><input
+          id="reportedDateTime"
+          type="datetime-local"
+        />
+        <label>Value</label><input id="resultValue" type="number" step="0.01" />
+        <label>Is spoiled?<input
+            type="radio"
+            name="spoiledSelection"
+            value="Yes"
+            id="spoiledYes"
+          />Yes<input
+            type="radio"
+            name="spoiledSelection"
+            value="No"
+            id="spoiledNo"
+          />No</label>
+        <p>*** To add a result, the respective specimen must be present in the
+          database.</p>
+        <input class="btn" type="submit" id="addResultBtn" value="Add Result" />
+      </fieldset>
+    </form>
+
+    <form id="updateResultForm" action="/update-result">
+      <legend>Update Result</legend>
+      <fieldset id="resultUpdateFieldset">
+        <label for="ResultID">Result ID:</label>
+        <input type="text" id="resultIDUpdate" disabled />
+        <label for="patientSpecimenIDUpdate">Patient Specimen</label>
+        <select name="patientSpecimenIDUpdate" id="patientSpecimenIDUpdate">
+          {{#each patientSpecimenEditDropDown}}
+            <option value={{this.value}}>{{this.displayValue}}</option>
+          {{/each}}
+        </select>
+        <label>Laboratory Test Name</label>
+        <select name="laboratoryTestIDUpdate" id="laboratoryTestIDUpdate">
+          {{#each laboratoryTestName}}
+            <option value={{this.laboratoryTestID}}>{{this.name}}</option>
+          {{/each}}
+        </select>
+        <label>Facility Name</label>
+        <select name="facilityIDUpdate" id="facilityIDUpdate">
+          {{#each facilityName}}
+            <option value={{this.facilityID}}>{{this.facilityName}}</option>
+          {{/each}}
+        </select>
+        <label>Reporting Datetime:</label><input
+          id="reportedDateTimeUpdate"
+          type="datetime-local"
+        />
+        <label>Value</label><input
+          id="resultValueUpdate"
+          type="number"
+          step="0.01"
+        />
+        <label for="spoiledSelection">Is spoiled?</label>
+        <input
+          type="radio"
+          id="spoiledYesUpdate"
+          name="spoiledSelection"
+          value="Yes"
+        />Yes
+        <input
+          type="radio"
+          id="spoiledNoUpdate"
+          name="spoiledSelection"
+          value="No"
+        />No
+        <input
+          class="btn"
+          type="submit"
+          id="editResultBtn"
+          value="Update Result"
+        />
+      </fieldset>
+    </form>
+  </div>
+
+</main>
+<script src="/js/results.js"></script>

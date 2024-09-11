@@ -1,0 +1,102 @@
+<main>
+  <div>
+    <table id="facilityList">
+      <caption>Facility List</caption>
+      <tr>
+        <th>Facility ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Tests Offered</th>
+        <th>Is Active?</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      {{#each data}}
+        <tr facility-id={{this.facilityID}}>
+          <td>{{this.facilityID}}</td>
+          <td>{{this.facilityName}}</td>
+          <td>{{this.address}}</td>
+          <td>{{this.testsOffered}}</td>
+          <td>{{this.isActive}}</td>
+          <td><button
+              onclick="editFacility({{this.facilityID}})"
+            >Edit</button></td>
+          <td><button
+              onclick="deleteFacility({{this.facilityID}})"
+            >Delete</button></td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+
+  <div class="forms">
+      <form id="addFacilityForm" action="/add-facility">
+        <legend>New Facility</legend>
+        <fieldset>
+          <label>Name</label>
+          <input type="text" id="name" />
+          <label>Address</label>
+          <input type="text" id="address" />       
+          <label for="isActive">Is Active?</label>
+          <select name="isActive" id="isActive">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+          </select> 
+          <label for="testsOffered">Select Tests Offered:</label>
+          {{#each testsOffered}}
+            <label for="{{this.testsOffered}}"><input
+                type="checkbox"
+                id="{{this.laboratoryTestID}}"
+                name="testsOffered"
+                value="{{this.name}}"
+              />
+              {{this.name}}</label>
+          {{/each}}
+          <p>*** If an offered test is not seen in current list, add new test to database.</p>
+          <input
+            class="btn"
+            type="submit"
+            id="addFacilityBtn"
+            value="Add Facility"
+          />
+        </fieldset>
+      </form>
+    
+
+    
+      <form id="updateFacilityForm" action="/update-facility">
+        <legend>Update Facility</legend>
+        <fieldset id="facilityUpdateFieldset">
+          <label>:facilityID</label>
+          <input type="text" id="facilityIDUpdate" disabled />
+          <label>Name</label>
+          <input type="text" id="nameUpdate" />
+          <label>Address</label>
+          <input type="text" id="addressUpdate" />
+          <label for="isActive">Is Active?</label>
+          <select name="isActive" id="isActiveUpdate">
+            <option value="1" selected>Yes</option>
+            <option value="0">No</option>
+          </select> 
+          <label for="testsOfferedUpdate">Select Updated Tests Offered:</label>
+          {{#each testsOffered}}
+            <label for="{{this.testsOffered}}"><input
+                type="checkbox"
+                id="testIDUpdate:{{this.laboratoryTestID}}"
+                name="testsOfferedUpdate"
+                value="{{this.laboratoryTestID}}"
+              />
+              {{this.name}}</label>
+          {{/each}}
+          <p>*** If an offered test is not seen in current list, add new test to database.</p>
+          <input
+            class="btn"
+            type="submit"
+            id="updateFacilityBtn"
+            value="Update Facility"
+          />
+        </fieldset>
+      </form>
+  </div>
+</main>
+<script src="/js/facilities.js"></script>

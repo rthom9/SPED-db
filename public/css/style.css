@@ -1,0 +1,141 @@
+main {
+}
+
+div {
+}
+
+footer {
+}
+
+/* ------ NAVIGATION ----------*/
+nav {
+  display: flex;
+  justify-content: space-around;
+  text-align: center;
+  background-color: lightblue;
+  font-size: large;
+}
+
+nav a {
+  background-color: lightblue;
+  color: black;
+  padding: 1%;
+  margin: 2px;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+/*-------- TYPOGRAPHY ----------*/
+
+/*--------- TABLE --------------*/
+
+table {
+  background-color: lightgray;
+  padding: 20px;
+  margin: 0 auto;
+  table-layout: auto;
+  width: 90%;
+}
+
+caption {
+  font-size: 2em;
+  text-align: left;
+}
+
+th {
+  border-bottom: 5px solid gray;
+  font-size: 1.1em;
+  padding: 0 1% 0 1%;
+}
+td {
+  border-bottom: 3px solid gray;
+  padding: 3px 10px 3px 10px;
+}
+
+/*  ----- Form ----- */
+.forms {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  margin: 0 auto;
+  width: 90%;
+}
+
+form {
+  flex: auto;
+  justify-content: left;
+  color: black;
+  
+}
+
+fieldset {
+  background-color: white;
+  border: 2px dotted gray;
+  margin: 1%;
+  padding: 1.5%;
+  width: 80%;
+}
+
+.fieldset-focus {
+  background-color: lightgray;
+  border: 4px dotted lightblue;
+  margin: 1%;
+  padding: 1.5%;
+  width: 80%;
+}
+
+legend {
+  color: var(--skyBlue);
+  font-size: 1.5em;
+  font-weight: bold;
+  width: 90%;
+  padding: 0 1.5% 0 1.5%;
+  border-top: 2px solid var(--tanTransparent);
+  border-right: 2px solid var(--tanTransparent);
+  border-left: 2px solid var(--tanTransparent);
+}
+label {
+  display: block;
+  margin-top: 1%;
+  margin-bottom: 0.5%;
+}
+
+input[type=text] {
+  width: 90%;
+}
+
+textarea {
+  width: 90%;
+  height: 75px;
+}
+
+.btn {
+  color: white;
+  background-color: lightblue;
+  margin: 1%;
+}
+
+.btn:hover {
+  color: lightblue;
+  background-color: white;
+}
+
+.mainStyle {
+  width: 70%;
+  margin: 0 auto;
+  background-color: #f0f0f0;
+  padding: 20px;
+}
+
+button,
+input,
+select,
+textarea {
+  font-size: 110%;
+  font-family: inherit;
+  padding: 6px;
+}

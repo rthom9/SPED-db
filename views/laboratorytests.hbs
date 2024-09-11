@@ -1,0 +1,91 @@
+<main>
+  <div>
+    <table id="laboratoryTestList">
+      <caption>Laboratory Test List</caption>
+      <tr>
+        <th>Laboratory Test ID</th>
+        <th>Name</th>
+        <th>Lower Limit</th>
+        <th>Upper Limit</th>
+        <th>Unit</th>
+        <th>isActive?</th>
+        <th>Comment</th>
+        <th>Edit</th>
+      </tr>
+      {{#each data}}
+        <tr laboratoryTest-id={{this.laboratoryTestID}}>
+          <td>{{this.laboratoryTestID}}</td>
+          <td>{{this.name}}</td>
+          <td>{{this.lowerLimit}}</td>
+          <td>{{this.upperLimit}}</td>
+          <td>{{this.unit}}</td>
+          <td>{{this.isActive}}</td>
+          <td>{{this.comment}}</td>
+          <td><button
+              onclick="editLaboratoryTest({{this.laboratoryTestID}})"
+            >Edit</button></td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+
+  <div class="forms">
+    <form id="addLaboratoryTestForm" action="/add-laboratoryTest">
+      <legend>New Laboratory Test</legend>
+      <fieldset>
+        <label>Name</label>
+        <input type="text" id="name" />
+        <label>Lower Limit</label>
+        <input type="number" id="lowerLimit" min="0" max="100000" step="0.01"/>
+        <label>Upper Limit</label>
+        <input type="number" id="upperLimit" min="0" max="100000" step="0.01"/>
+        <label>Unit</label>
+        <input type="text" id="unit" />
+        <label for="isActive">Active?</label>
+        <select name="isActive" id="isActive"> {{! may need to update}}
+          <option value="1">Yes</option>
+          <option value="0">No</option>
+        </select>
+        <label>Comment</label>
+        <input type="text" id="comment" />
+        <input
+          class="btn"
+          type="submit"
+          id="addLaboratoryTestBtn"
+          value="Add Laboratory Test"
+        />
+
+      </fieldset>
+    </form>
+
+    <form id="updateLaboratoryTestForm" action="/update-laboratoryTest">
+      <legend>Update Laboratory Test</legend>
+      <fieldset id="laboratoryTestUpdateFieldset">
+        <label>:laboratoryTestID</label>
+        <input type="text" id="laboratoryTestIDUpdate" disabled />
+        <label>Name</label>
+        <input type="text" id="nameUpdate" />
+        <label>Lower Limit</label>
+        <input type="number" id="lowerLimitUpdate" min="0" max="100000" step="0.01"/>
+        <label>Upper Limit</label>
+        <input type="number" id="upperLimitUpdate" min="0" max="100000" step="0.01"/>
+        <label>Unit</label>
+        <input type="text" id="unitUpdate" />
+        <label for="isActive">Active?</label>
+        <select name="isActive" id="isActiveUpdate">   {{! may need to update}}
+          <option value="1" selected>Yes</option>
+          <option value="0">No</option>
+        </select>
+        <label>Comment</label>
+        <input type="text" id="commentUpdate" />
+        <input
+          class="btn"
+          type="submit"
+          id="updateLaboratoryTestBtn"
+          value="Update Laboratory Test"
+        />
+      </fieldset>
+    </form>
+  </div>
+</main>
+<script src="/js/laboratoryTests.js"></script>

@@ -1,0 +1,63 @@
+<main>
+  <div>
+    <table id="specimenList">
+      <caption>Specimen List</caption>
+      <tr>
+        <th>Specimen ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Collection Date</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      {{#each data}}
+        <tr specimen-id={{this.specimenID}}>
+          <td>{{this.specimenID}}</td>
+          <td>{{this.firstName}}</td>
+          <td>{{this.lastName}}</td>
+          <td>{{this.collectionDate}}</td>
+          <td><button
+              onclick="editSpecimen({{this.specimenID}})"
+            >Edit</button></td>
+          <td><button
+              onclick="deleteSpecimen({{this.specimenID}})"
+            >Delete</button></td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+
+  <div class="forms">
+    <form id="addSpecimenForm" action="/add-specimen">
+      <legend>New Specimen</legend>
+        <fieldset>
+        <label for="patientName">Patient Name</label>
+        <select name="patientName" id="patientName">
+        {{#each patients}}
+            <option value={{this.patientID}}>{{this.patientID}} - {{this.firstName}} {{this.lastName}}</option>
+        {{/each}}
+        </select>
+        <label>Collection Date</label></label><input id="collectionDate" type="datetime-local">
+        <p>*** To add a patient's specimen, ensure the patient has been added to the database.</p>
+        <input class="btn" type="submit" id="addSpecimenBtn" value="Add Specimen">
+      </fieldset>
+    </form>
+
+    <form id="updateSpecimenForm" action="/update-specimen">
+      <legend>Update Specimen</legend>
+        <fieldset id="specimenUpdateFieldset">
+                    <label for="specimenIDUpdate">Specimen ID</label>
+                    <input type="text" id="specimenIDUpdate" disabled>
+                    <label for="patientName">Patient Name</label>
+                    <select name="patientName" id="patientNameUpdate">
+                    {{#each patients}}
+                        <option>{{this.patientID}} - {{this.firstName}} {{this.lastName}}</option>
+                    {{/each}}
+                    </select>
+                    <label>Collection Date</label></label><input id="collectionDateUpdate" type="datetime-local">
+                    <input class="btn" type="submit" id="editSpecimenBtn" value="Update Specimen">
+                </fieldset>
+    </form>
+  </div>
+</main>
+<script src="/js/specimens.js"></script>

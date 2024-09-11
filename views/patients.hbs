@@ -1,0 +1,102 @@
+<main>
+  <div>
+    <table id="patientList">
+      <caption>Patient List</caption>
+      <tr>
+        <th>Patient ID</th>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Date of Birth</th>
+        <th>Sex</th>
+        <th>Phone Number</th>
+        <th>Address</th>
+        <th>Email</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+      {{#each data}}
+        <tr patient-id={{this.patientID}}>
+          <td>{{this.patientID}}</td>
+          <td>{{this.firstName}}</td>
+          <td>{{this.lastName}}</td>
+          <td>{{this.dateOfBirth}}</td>
+          <td>{{this.sex}}</td>
+          <td>{{this.phoneNumber}}</td>
+          <td>{{this.address}}</td>
+          <td>{{this.email}}</td>
+          <td><button
+              onclick="editPatient({{this.patientID}})"
+            >Edit</button></td>
+          <td><button
+              onclick="deletePatient({{this.patientID}})"
+            >Delete</button></td>
+        </tr>
+      {{/each}}
+    </table>
+  </div>
+
+  <div class="forms">
+    <form id="addPatientForm" action="/add-patient">
+      <legend>New Patient</legend>
+      <fieldset>
+        <label>First Name</label>
+        <input type="text" id="firstName" />
+        <label>Last Name</label>
+        <input type="text" id="lastName" />
+        <label>Birthdate</label>
+        <input type="date" id="dateOfBirth" />
+        <label for="patientSex">Sex</label>
+        <select name="patientSex" id="sex">
+          <option>M</option>
+          <option>F</option>
+          <option>O</option>
+        </select>
+        <label>Address</label>
+        <input type="text" id="address" />
+        <label>Phone Number</label>
+        <input type="tel" id="phoneNumber" />
+        <label>Email</label>
+        <input type="email" id="email" />
+        <input
+          class="btn"
+          type="submit"
+          id="addPatientBtn"
+          value="Add Patient"
+        />
+      </fieldset>
+    </form>
+
+    <form id="updatePatientForm" action="/update-patient">
+      <legend>Update Patient</legend>
+      <fieldset id="patientUpdateFieldset">
+        <label>Patient ID</label>
+        <input type="text" id="patientIDUpdate" disabled />
+        <label>First Name</label>
+        <input type="text" id="firstNameUpdate" />
+        <label>Last Name</label>
+        <input type="text" id="lastNameUpdate" />
+        <label>Birthdate</label>
+        <input type="date" id="dateOfBirthUpdate" />
+        <label for="patientSex">Sex</label>
+        <select name="patientSex" id="sexUpdate">
+          <option selected>M</option>
+          <option>F</option>
+          <option>O</option>
+        </select>
+        <label>Phone Number</label>
+        <input type="tel" id="phoneNumberUpdate" />
+        <label>Address</label>
+        <input type="text" id="addressUpdate" />
+        <label>Email</label>
+        <input type="email" id="emailUpdate" />
+        <input
+          class="btn"
+          type="submit"
+          id="updatePatientBtn"
+          value="Update Patient"
+        />
+      </fieldset>
+    </form>
+  </div>
+</main>
+<script src="/js/patients.js"></script>
