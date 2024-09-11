@@ -2,9 +2,10 @@
 
 # Description
 
-    Many health regions suffer from patient blood specimen testing backlogs impacting efficient patient care delivery. To address this problem, it is necessary to determine the extent of these backlogs and identify facilities where they occur. This will allow for the implementation of targeted initiatives and resource allocation in the future to improve blood testing efficiency.
-    
-    The SPED Database was created to record collection and results data of patient specimens at the various testing facilities of a specified health region. The database will record data of blood specimen collections at test facilities and their subsequent results following specific test administration. Importantly, the date and time of both specimen collection and result report allows for the precise determination of a specimen’s processing time. The database will also assist in determining which tests and/or facilities are contributing most to backlogs. Additionally, the database will allow for records of spoiled specimens, which will help identify facilities with poor test procedures.
+Many health regions suffer from patient blood specimen testing backlogs impacting efficient patient care delivery. To address this problem, it is necessary to determine the extent of these backlogs and identify facilities where they occur. This will allow for the implementation of targeted initiatives and resource allocation in the future to improve blood testing efficiency.
+
+The SPED Database was created to record collection and results data of patient specimens at the various testing facilities of a specified health region. The database will record data of blood specimen collections at test facilities and their subsequent results following specific test administration. Importantly, the date and time of both specimen collection and result report allows for the precise determination of a specimen’s processing time. The database will also assist in determining which tests and/or facilities are contributing most to backlogs. Additionally, the database will allow for records of spoiled specimens, which will help identify facilities with poor test procedures.
+
 
 ## Database Design:
 
