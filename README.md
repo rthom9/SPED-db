@@ -28,23 +28,23 @@ A user-friendly interface facilitates efficient data manipulation and retrieval.
 
 Patients:
 
-<img src="/demo_screenshots/patients.png" width="500"/>
+<img src="/demo_screenshots/patients.png" width="600"/>
 
 Specimens:
 
-<img src="/demo_screenshots/specimens.png" width="500"/>
+<img src="/demo_screenshots/specimens.png" width="600"/>
 
 Laboratory Tests:
 
-<img src="/demo_screenshots/laboratory tests.png" width="500"/>
+<img src="/demo_screenshots/laboratory tests.png" width="600"/>
 
 Facilities:
 
-<img src="/demo_screenshots/facilities.png" width="500"/>
+<img src="/demo_screenshots/facilities.png" width="600"/>
 
 Results:
 
-<img src="/demo_screenshots/results.png" width="500"/>
+<img src="/demo_screenshots/results.png" width="600"/>
 
 ## Technologies Used
 <b>Backend:</b> Node.js with Express.js.  
