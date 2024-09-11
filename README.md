@@ -19,32 +19,32 @@ The database consists of the following entities:
 
 <b>Database Schema:</b>
 <br></br>
-<img src="/demo_screenshots/database schema.png" width="500"/>
+<img src="/demo_screenshots/database schema.png" width="700"/>
 <br></br>
 
 ## User Interface:
 
 A user-friendly interface facilitates efficient data manipulation and retrieval. The following views are provided with appropriate CRUD functionality.
 
-Patients:
+<b>Patients:</b>
 
-<img src="/demo_screenshots/patients.png" width="600"/>
+<img src="/demo_screenshots/patients.png" width="700"/>
 
-Specimens:
+<b>Specimens:</b>
 
-<img src="/demo_screenshots/specimens.png" width="600"/>
+<img src="/demo_screenshots/specimens.png" width="700"/>
 
-Laboratory Tests:
+<b>Laboratory Tests:</b>
 
-<img src="/demo_screenshots/laboratory tests.png" width="600"/>
+<img src="/demo_screenshots/laboratory tests.png" width="700"/>
 
-Facilities:
+<b>Facilities:</b>
 
-<img src="/demo_screenshots/facilities.png" width="600"/>
+<img src="/demo_screenshots/facilities.png" width="700"/>
 
-Results:
+<b>Results:</b>
 
-<img src="/demo_screenshots/results.png" width="600"/>
+<img src="/demo_screenshots/results.png" width="700"/>
 
 ## Technologies Used
 <b>Backend:</b> Node.js with Express.js.  
